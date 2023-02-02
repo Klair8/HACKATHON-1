@@ -8,15 +8,24 @@
   <link rel="stylesheet" href="style.css">
   <title>Hackaton -1 / Space Invader</title>
 </head>
-
-<body>
-
+    <body>
+       <navbar>
+        <div id="navigation-container">
+          <img src="Space-Invaders-PNG-Free-Image.png" width="50px" height="50px"> 
+          <p> Space Invaders !!</p>
+          <ul> 
+            <button onclick="myMove()"> Start Game !! </button>
+            <button type="button" text="point" ></button>
+            <button type="button" text="life" ></button>
+          </ul>
+        </div> 
+       </navbar>
   <p>a</p>
-  <p><button onclick="myMove()">Start Game</button></p>
-  <div id="container">
-    <section id="monstersContainer"></section>
-    <div id="animate"></div>
-  </div>
-  <script src="script.js"></script>
-
+        <!-- <p><button onclick="myMove()">Start Game</button></p> -->
+        <div id="container">
+           <section id="monstersContainer"></section>
+          <div id="animate"></div>
+        </div>
+        <script src="script.js"></script>
+        </body>
 </html>

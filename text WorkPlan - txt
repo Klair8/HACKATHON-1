@@ -1,0 +1,53 @@
+##HTML
+
+- body 
+- Navbar: Button Start GAME + Button the points + button live <3 (bonus- put button coffee to by more live)
+- section : container for the game
+- Section: monsters
+- section : shooting part
+- section : space ship
+#  div create ship keyboard < > 
+- footer : copyright
+
+
+#CSS
+
+- navbar : color be grey , box points , boc live ( heart)
+- section : container black with stars
+- Section: monsters ( green) img ? 
+
+
+##javascript
+
+function : monster moving 4 row of 6 monsters per row set interval
+    function Move() - loop 
+    Bonus if time  ==> function shoot randomly to spaceship
+
+    (if statement) if monster had been shoot ,  make a cool background and
+    remove monster and add points
+    if win big button you win with confetti , play level 2 ? (yes/no) 
+    no bye bye 
+    yes loop monster fonction to do 6 row and 8 monsters per row 
+
+
+Function shooting:
+Click up shooting keyboard up
+Create a div rond ball move up with set interval
+Find div position =- find position  ball
+
+
+
+function : points 
+adding point by shooting monster 
+
+function : space ship - event click we move 
+function move left to right with keypress events < > 
+function click to shoot keyboard 
+==> bonus if time : (if statement ) touch by a monster red background space ship and maybe a statement counting the left live
+ex: alert (you still have 2 live !!)
+
+
+
+
+
+

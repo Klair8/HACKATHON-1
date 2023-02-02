@@ -1,7 +1,15 @@
+
 * {
   padding: 0;
   margin: 0;
 }
+
+
+#navigation-container{
+  border: 2px solid black;
+  display:flex;
+}
+
 
 #container {
     width: 400px;
