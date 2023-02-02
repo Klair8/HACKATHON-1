@@ -1,3 +1,9 @@
+#navigation-container{
+  border: 2px solid black;
+  display:flex;
+}
+
+
 #container {
     width: 400px;
     height: 400px;
