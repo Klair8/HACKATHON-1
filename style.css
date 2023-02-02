@@ -21,6 +21,6 @@
   .monster {
     width: 40px;
     height: 40px;    
-    background-image: url('https://raw.githubusercontent.com/Klair8/HACKATHON-1/4eb867f4aa381ceab77d3f626771cfbb9308785f/Space-Invaders-PNG-Free-Image.png');
-    margin: 10px;
+    background-color: rgb(25, 127, 46);
+    margin: 9px;
   }
