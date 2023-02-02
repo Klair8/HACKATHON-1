@@ -4,12 +4,23 @@
   margin: 0;
 }
 
+.logo{
+  float: left;
+}
 
 #navigation-container{
   border: 2px solid black;
   display:flex;
-}
+  justify-content: space-around;
+  align-items: center;
+} 
 
+#button{
+  width: 150px;
+  height: 50px;
+  padding: 15px;
+  border: 5px double grey
+}
 
 #container {
     width: 400px;
@@ -23,3 +34,4 @@
     position: absolute;
     background-color: rgb(25, 127, 46);
   }
+
