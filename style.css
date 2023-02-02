@@ -4,12 +4,25 @@
   margin: 0;
 }
 
-
-#navigation-container{
-  border: 2px solid black;
-  display:flex;
+.logo {
+  float: left;
 }
 
+
+#button {
+  width: 150px;
+  height: 50px;
+  padding: 15px;
+  border: 5px double grey;
+}
+
+
+#navigation-container {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
 #container {
     width: 900px;
