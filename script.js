@@ -8,8 +8,7 @@ function newMonsters() {
 }
 newMonsters()
 
-const invaders = document.getElementById("animate");
-
+// const invaders = document.getElementById("animate");
 
 const btn = document.getElementById("button");
 btn.addEventListener("click", myMove);
@@ -31,37 +30,21 @@ function myMove() {
 
 
 let spaceShip = document.getElementById("spaceShip");
-// ==> for moving by himself 
- function moveSpaceShip() {
-  let pos = 150
-  let id =
-      setInterval(function() {
-               if (pos === 300) {
-      clearInterval(id);
-            } else {
-                pos++;
-                spaceShip.style.right = pos + "px";
-                spaceShip.style.left = pos + 'px';
-            } 
-          }, 20)
-        };
+let shooting = document.createElement("div");
+shooting.classList.add('laser')
+spaceShip.appendChild(shooting); 
 
-   
+// ==> moving but only when clicking back anf forth on the start games ...
+let pos = 150
+let dir = 45
 
-function shooting() {
-  for (let i = 0; i <5 ; i++) {
-  let shooting = document.createElement("div");
-  let spaceShip = document.getElementById("spaceShip");
-  shooting.classList.add('laser')
-  spaceShip.appendChild(shooting); 
-}
-};
-shooting();
+ function moveSpaceShip() {;
+  setInterval(function () {
+    if (pos >300) dir = - 20
+      else if (pos<0) dir= 20   
+     pos+= dir
+      spaceShip.style.left = pos + 'px';
+    }, 60)
+  }
 
-add.addEventListener("keydown" (e){
- if (evt.KeyCode === 38){
-  createListElement();
- }
-};
- laser.addEventListener("keypress", addlistAfterKeypress);
 
