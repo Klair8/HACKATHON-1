@@ -4,17 +4,16 @@
   margin: 0;
 }
 
-
 .logo {
   float: left;
 }
 
 
-#button{
+#button {
   width: 150px;
   height: 50px;
   padding: 15px;
-  border: 5px double grey
+  border: 5px double grey;
 }
 
 #navigation-container {
@@ -25,24 +24,36 @@
 }
 
 #container {
-    width: 900px;
-    height: 600px;
+    width: 400px;
+    height: 400px;
     position: relative;
     background: rgb(32, 32, 31);
-    display: flex;
-  }
-  #monstersContainer {  
-    width: 100px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, 1fr);    
-    position: absolute;
-    left: 50px;
-  }
-  .monster {
-    width: 40px;
-    height: 40px;    
-    background-color: rgb(25, 127, 46);
-    margin: 9px;
   }
 
+
+
+.monster {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: rgb(25, 127, 46);
+  }
+
+  #spaceShip{
+    position: absolute;
+    left:150px;
+    bottom:20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(127, 25, 98);
+  }
+
+ .laser{
+  width: 5px;
+  height: 10px;
+  position: absolute;
+  background-color: rgb(232, 111, 84);
+ }
+  
+
+  
