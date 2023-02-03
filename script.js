@@ -1,29 +1,29 @@
+let sectionMons = document.getElementById('monstersContainer')
+
 function newMonsters() {
-  for (let i = 0; i < 48; i++) {
-    let newMons = document.createElement('div')
-    let sectionMons = document.getElementById('monstersContainer')
+  for (let i = 0; i < 24; i++) {
+    let newMons = document.createElement('div')    
     newMons.classList.add('monster')
     sectionMons.appendChild(newMons)
   }
 }
 newMonsters()
 
-const invaders = document.getElementById("animate");
-
-
-
+console.log();
 const btn = document.getElementsByTagName("button")[0];
 btn.addEventListener("click", myMove);
 
-let pos = 0
+let pos = 50
 
-function myMove() {
+function myMove() {  
   setInterval(function () {
     if (pos === 300) {
-      clearInterval();
+      pos++;
+      sectionMons.style.right = pos + 'px';    
     } else {
       pos++;
-      invaders.style.left = pos + 'px';
+      sectionMons.style.left = pos + 'px';
     }
   }, 100)
 }
+
