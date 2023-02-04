@@ -1,22 +1,25 @@
 
 const container = document.querySelector('.container')
-let currentspaceShipIndex = 188
-let width = 20
+let currentspaceShipIndex = 167
+let width = 16
 let direction = 1
 let invaderId
+let aliensRemoved 
+// const resultdisplay =querySelector(."result")
 
 
-for (let i = 0; i < 198; i++) {
+for (let i = 0; i < 175; i++) {
   const square = document.createElement('div');
   container.appendChild(square)
+  square.classList.add(`square${i}`)
 }
 
 const squares = Array.from(document.querySelectorAll('.container div'))
 
 const alienInvader = [
   0,1,2,3,4,5,6,7,8,9,
-  18,19,20,21,22,23,24,25,26,27,
-  36,37,38,39,40,41,42,43,44,45
+  16,17,18,19,20,21,22,23,24,25,
+  32,33,34,35,36,37,38,39,40,41,
 ]
 
 function newMonsters() {
@@ -29,7 +32,6 @@ newMonsters()
 squares[currentspaceShipIndex].classList.add('spaceShip');
 
 // move spaceship
-
 function moveSpaceShip(e) {;
   squares[currentspaceShipIndex].classList.remove('spaceShip');
   switch(e.key) {
@@ -42,6 +44,7 @@ function moveSpaceShip(e) {;
     }
     squares[currentspaceShipIndex].classList.add('spaceShip')
   }
+
 
     document.addEventListener('keydown', moveSpaceShip);
 
@@ -68,74 +71,3 @@ function myMove() {
   }
   myMove();
 
-
-
-    function moveDown() {
-      posy += 10
-      sectionMons.style.top = posy + 'px'
-    }
-//   }
-
-  //   function moveLeft() {
-  //     setInterval(function () {
-  //       if (posy >= 350) {
-  //         clearInterval(moveLeft)
-  //       } else if (posx <= 1000 && posx > 50) {
-  //         posx = posx - danger;
-  //         sectionMons.style.left = posx + 'px';
-  //       } else {
-  //         moveDown()
-  //         moveRigth()
-  //       }
-  //     }, 10)
-  //   }
-  //   if (posy >= 800) {
-  //     // alert('lose')
-  //   }
-  // }
-  moveRigth()
-
-
-
-// // shootting time
-
-// // let posShoot = 0
-
-// // document.addEventListener("keydown", blast)
-
-// // function blast (){
-// // let shoot = document.createElement('div');
-// // shoot.classList.add('laser');
-// // spaceShip.appendChild(shoot);
-// // // shoot.style.top = posShoot + 'px'
-// // // setInterval(function () {
-// // // {shoot.style.top = posShoot - 1 + 'px' }, 100);
-// // //  if (e.key === 38){}
-// // }
-
-// // blast();
-
-
-
-
-
-
-
-
-
-
-
-// // let laserId
-// // let currentLaserIndex = currentspaceShipIndex
-// // function movelaser(){
-// //   spaceShip[currentLaserIndex].classList.remove(`laser`)
-// //   currentLaserIndex -= innerWidth
-// //   spaceShip[currentLaserIndex].classList.add(`laser`)
-// // }
-// // switch (e.key){
-// //   case `ArrowUp`:
-// //     laserId = setInterval(movelaser,100)
-// // }
-// // };
-
-// // document.addEventListener("keydown", shoot)
