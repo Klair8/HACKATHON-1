@@ -42,78 +42,78 @@ function moveSpaceShip(e) {;
     }
     squares[currentspaceShipIndex].classList.add('spaceShip')
   }
-  
+
     document.addEventListener('keydown', moveSpaceShip);
 
-// // move monster
-// const btn = document.getElementsByTagName("button")[0];
-// btn.addEventListener("click", myMove);
+// move monster
+const btn = document.getElementsByTagName("button")[0];
+btn.addEventListener("click", myMove);
 
-// squares[currentLastMonster].classList.add('last monster');
+squares[currentLastMonster].classList.add('last monster');
 
-// function myMove(){
-//   squares[currentspaceShipIndex].classList.remove('last monster');
-//   if(currentLastMonster % width !== 0 )currentLastMonster +=1
-//   break
-//   squares[currentLastMonster].classList.add('last monster')
-// }
-//  setInterval( myMove, 100);
+function myMove(){
+  squares[currentspaceShipIndex].classList.remove('last monster');
+  if(currentLastMonster % width !== 0 )currentLastMonster +=1
+  break
+  squares[currentLastMonster].classList.add('last monster')
+}
+ setInterval( myMove, 100);
 
 
-// function myMove() {
-//     setInterval
-//     (alienInvader[0] % width < width -1 ) { alienInvader[0] +=1}
-//     }, 100)
+function myMove() {
+    setInterval
+    (alienInvader[0] % width < width -1 ) { alienInvader[0] +=1}
+    }, 100)
 
+  }
+  myMove();
+
+
+
+    function moveDown() {
+      posy += 10
+      sectionMons.style.top = posy + 'px'
+    }
 //   }
-//   myMove();
-  
 
-
-//     function moveDown() {
-//       posy += 10
-//       sectionMons.style.top = posy + 'px'
-//     }
-// //   }
-
-//     function moveLeft() {
-//       setInterval(function () {
-//         if (posy >= 350) {
-//           clearInterval(moveLeft)
-//         } else if (posx <= 1000 && posx > 50) {
-//           posx = posx - danger;
-//           sectionMons.style.left = posx + 'px';
-//         } else {
-//           moveDown()
-//           moveRigth()
-//         }
-//       }, 10)
-//     }
-//     if (posy >= 800) {
-//       // alert('lose')
-//     }
-//   }
-//   moveRigth()
+  //   function moveLeft() {
+  //     setInterval(function () {
+  //       if (posy >= 350) {
+  //         clearInterval(moveLeft)
+  //       } else if (posx <= 1000 && posx > 50) {
+  //         posx = posx - danger;
+  //         sectionMons.style.left = posx + 'px';
+  //       } else {
+  //         moveDown()
+  //         moveRigth()
+  //       }
+  //     }, 10)
+  //   }
+  //   if (posy >= 800) {
+  //     // alert('lose')
+  //   }
+  // }
+  moveRigth()
 
 
 
-// // // shootting time 
+// // shootting time
 
-// // // let posShoot = 0
+// // let posShoot = 0
 
-// // // document.addEventListener("keydown", blast)
+// // document.addEventListener("keydown", blast)
 
-// // // function blast (){
-// // // let shoot = document.createElement('div');
-// // // shoot.classList.add('laser');
-// // // spaceShip.appendChild(shoot);
-// // // // shoot.style.top = posShoot + 'px'
-// // // // setInterval(function () {
-// // // // {shoot.style.top = posShoot - 1 + 'px' }, 100);
-// // // //  if (e.key === 38){}
-// // // }
+// // function blast (){
+// // let shoot = document.createElement('div');
+// // shoot.classList.add('laser');
+// // spaceShip.appendChild(shoot);
+// // // shoot.style.top = posShoot + 'px'
+// // // setInterval(function () {
+// // // {shoot.style.top = posShoot - 1 + 'px' }, 100);
+// // //  if (e.key === 38){}
+// // }
 
-// // // blast();
+// // blast();
 
 
 
@@ -138,5 +138,4 @@ function moveSpaceShip(e) {;
 // // }
 // // };
 
-// // document.addEventListener("keydown", shoot)  
-
+// // document.addEventListener("keydown", shoot)
