@@ -47,39 +47,10 @@
   background-color: pink;
   }
 
-
-/*
-
-  #monstersContainer {  
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, 1fr);    
-    position: absolute;
-    left: 150px;
-  }
-  .monster {
-    width: 40px;
-    height: 40px;    
-    background-color: rgb(25, 127, 46);
-    margin: 5px;
-  }
-
-
-  
-/* need to be position absolute as he is below  */
-/*#spaceShip{
-    position: absolute;
-    left:250px;
-    bottom:20px;
-    width: 50px;
-    height: 80px;
-  }
-
-
-.laser {
-  width: 10px;
-  height: 10px;
+  .laser {
   background-color: red;     
-  position: absolute;
-}*/
-*/
+  } 
+
+  .blast{
+    background-color: purple
+  }
