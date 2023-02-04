@@ -8,43 +8,54 @@ function newMonsters() {
 }
 newMonsters()
 
-// const invaders = document.getElementById("animate");
+const invaders = document.getElementById("animate");
 
 const btn = document.getElementById("button");
-btn.addEventListener("click", myMove);
+// btn.addEventListener("click", myMove);
 btn.addEventListener("click", moveSpaceShip);
 // the start button start both monster and spaceship to move 
 
+// // BASE
+// const KEY_RIGHT= 39;
+// const KEY_LEFT= 37;
+// const KEY_UP= 38;
 
-function myMove() {
-  let pos = 0
-  setInterval(function () {
-    if (pos === 300) {
-      clearInterval();
-    } else {
-      pos++;
-      invaders.style.left = pos + 'px';
-    }
-  }, 100)
-}
-
+// const STATE = {
+//   move_left : false,
+//   move_right : false,
+//   shoot: false,
+// }
 
 let spaceShip = document.getElementById("spaceShip");
-let shooting = document.createElement("div");
-shooting.classList.add('laser')
-spaceShip.appendChild(shooting); 
 
-// ==> moving but only when clicking back anf forth on the start games ...
+// ship moving 
 let pos = 150
-let dir = 45
+let dir = 1
 
  function moveSpaceShip() {;
   setInterval(function () {
-    if (pos >300) dir = - 20
-      else if (pos<0) dir= 20   
+    if (pos >300) dir = - 1
+      else if (pos<0) dir= 1 
      pos+= dir
       spaceShip.style.left = pos + 'px';
     }, 60)
-  }
+  };
 
 
+// shootting time 
+
+// function shoot(e){
+// let laserId
+// let currentLaserIndex = currentspaceShipIndex
+// function movelaser(){
+//   spaceShip[currentLaserIndex].classList.remove(`laser`)
+//   currentLaserIndex -= innerWidth
+//   spaceShip[currentLaserIndex].classList.add(`laser`)
+// }
+// switch (e.key){
+//   case `ArrowUp`:
+//     laserId = setInterval(movelaser,100)
+// }
+// };
+
+// document.addEventListener("keydown", shoot)  
