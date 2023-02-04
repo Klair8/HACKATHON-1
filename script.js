@@ -1,3 +1,4 @@
+
 const sectionMons = document.getElementById('monstersContainer')
 
 function newMonsters() {
@@ -9,9 +10,11 @@ function newMonsters() {
 }
 newMonsters()
 
-
 const btn = document.getElementsByTagName("button")[0];
 btn.addEventListener("click", myMove);
+btn.addEventListener("click", moveSpaceShip);
+// the start button start both monster and spaceship to move 
+
 
 let posx = 50
 let posy = 0
@@ -65,3 +68,40 @@ function myMove() {
   }
   moveRigth()
 }
+
+
+
+let spaceShip = document.getElementById("spaceShip");
+
+// ship moving 
+let pos = 150
+let dir = 1
+
+ function moveSpaceShip() {;
+  setInterval(function () {
+    if (pos >300) dir = - 1
+      else if (pos<0) dir= 1 
+     pos+= dir
+      spaceShip.style.left = pos + 'px';
+    }, 60)
+  };
+
+
+// shootting time 
+
+// function shoot(e){
+// let laserId
+// let currentLaserIndex = currentspaceShipIndex
+// function movelaser(){
+//   spaceShip[currentLaserIndex].classList.remove(`laser`)
+//   currentLaserIndex -= innerWidth
+//   spaceShip[currentLaserIndex].classList.add(`laser`)
+// }
+// switch (e.key){
+//   case `ArrowUp`:
+//     laserId = setInterval(movelaser,100)
+// }
+// };
+
+// document.addEventListener("keydown", shoot)  
+
