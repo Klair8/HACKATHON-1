@@ -1,14 +1,17 @@
 
 const container = document.querySelector('.container')
 let currentspaceShipIndex = 188
-let width = 20
+let width = 18
 let direction = 1
 let invaderId
+let aliensRemoved 
+// const resultdisplay =querySelector(."result")
 
 
 for (let i = 0; i < 198; i++) {
   const square = document.createElement('div');
   container.appendChild(square)
+  square.classList.add(`square${i}`)
 }
 
 const squares = Array.from(document.querySelectorAll('.container div'))
@@ -29,7 +32,6 @@ newMonsters()
 squares[currentspaceShipIndex].classList.add('spaceShip');
 
 // move spaceship
-
 function moveSpaceShip(e) {;
   squares[currentspaceShipIndex].classList.remove('spaceShip');
   switch(e.key) {
@@ -42,8 +44,52 @@ function moveSpaceShip(e) {;
     }
     squares[currentspaceShipIndex].classList.add('spaceShip')
   }
-  
     document.addEventListener('keydown', moveSpaceShip);
+
+// game over
+// If (squares[currentspaceShipIndex].classList.contains('monster', 'spaceShip')){
+// resultdisplay.innerHTML = 'GAME OVER'
+// clearInterval(invaderId)
+// }
+
+// for ( let i= 0; i < alienInvader.length; i++){
+// if (alienInvader[i]> (squares.length)){
+// resultdisplay.innerHTML = 'GAME OVER'
+// clearInterval(invaderId)
+// }
+// }
+
+// invaderId = setInterval(myMove,100)
+
+// SHOOTING TIME
+
+function shootingTime(e) {
+let laserId
+let currentLaserIndex = currentspaceShipIndex
+function moveLaser(){
+  squares[currentLaserIndex].classList.remove('laser');
+  currentLaserIndex -= width
+  squares[currentLaserIndex].classList.add('laser');
+
+if(squares[currentLaserIndex].classList.contains('monster')){
+squares[currentLaserIndex].classList.remove('laser')
+squares[currentLaserIndex].classList.remove('monster')
+squares[currentLaserIndex].classList.add('blast')
+
+setTimeout(()=>squares[currentLaserIndex].classList.remove('blast'),300)
+clearInterval(laserId)
+
+const alienRemoved = alienInvader.indexOf(currentLaserIndex)
+aliensRemoved.push(alienRemoved)
+}
+}
+switch(e.key){
+  case'ArrowUp':
+  laserId = setInterval(moveLaser,100)
+}
+}
+document.addEventListener("keydown", shootingTime)
+
 
 // // move monster
 // const btn = document.getElementsByTagName("button")[0];
@@ -97,23 +143,6 @@ function moveSpaceShip(e) {;
 
 
 
-// // // shootting time 
-
-// // // let posShoot = 0
-
-// // // document.addEventListener("keydown", blast)
-
-// // // function blast (){
-// // // let shoot = document.createElement('div');
-// // // shoot.classList.add('laser');
-// // // spaceShip.appendChild(shoot);
-// // // // shoot.style.top = posShoot + 'px'
-// // // // setInterval(function () {
-// // // // {shoot.style.top = posShoot - 1 + 'px' }, 100);
-// // // //  if (e.key === 38){}
-// // // }
-
-// // // blast();
 
 
 
@@ -121,22 +150,4 @@ function moveSpaceShip(e) {;
 
 
 
-
-
-
-
-// // let laserId
-// // let currentLaserIndex = currentspaceShipIndex
-// // function movelaser(){
-// //   spaceShip[currentLaserIndex].classList.remove(`laser`)
-// //   currentLaserIndex -= innerWidth
-// //   spaceShip[currentLaserIndex].classList.add(`laser`)
-// // }
-// // switch (e.key){
-// //   case `ArrowUp`:
-// //     laserId = setInterval(movelaser,100)
-// // }
-// // };
-
-// // document.addEventListener("keydown", shoot)  
 
