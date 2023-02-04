@@ -1,30 +1,75 @@
+
+const sectionMons = document.getElementById('monstersContainer')
+
 function newMonsters() {
-  for (let i = 0; i < 48; i++) {
+  for (let i = 0; i < 24; i++) {
     let newMons = document.createElement('div')
-    let sectionMons = document.getElementById('monstersContainer')
     newMons.classList.add('monster')
     sectionMons.appendChild(newMons)
   }
 }
 newMonsters()
 
-const invaders = document.getElementById("animate");
-
-const btn = document.getElementById("button");
-// btn.addEventListener("click", myMove);
+const btn = document.getElementsByTagName("button")[0];
+btn.addEventListener("click", myMove);
 btn.addEventListener("click", moveSpaceShip);
 // the start button start both monster and spaceship to move 
 
-// // BASE
-// const KEY_RIGHT= 39;
-// const KEY_LEFT= 37;
-// const KEY_UP= 38;
 
-// const STATE = {
-//   move_left : false,
-//   move_right : false,
-//   shoot: false,
-// }
+let posx = 50
+let posy = 0
+let danger = 0.5
+
+function myMove() {
+  // function stopMove() {
+  //   clearInterval(moveR)
+  //   clearInterval(moveLeft())
+  //   clearInterval(moveDown())
+  // }
+
+  function moveRigth() {
+    setInterval(function () {
+      danger = danger + 0.1
+    }, 500)
+
+    setInterval(function () {
+      if (posx >= 500) {
+        moveDown()
+        moveLeft()
+      } else if (posy >= 300) {
+        clearInterval()
+      } else {
+        posx = posx + danger;
+        sectionMons.style.left = posx + 'px';
+      }
+    }, 10)
+
+    function moveDown() {
+      posy += 10
+      sectionMons.style.top = posy + 'px'
+    }
+
+    function moveLeft() {
+      setInterval(function () {
+        if (posy >= 350) {
+          clearInterval(moveLeft)
+        } else if (posx <= 1000 && posx > 50) {
+          posx = posx - danger;
+          sectionMons.style.left = posx + 'px';
+        } else {
+          moveDown()
+          moveRigth()
+        }
+      }, 10)
+    }
+    if (posy >= 400) {
+      alert('lose')
+    }
+  }
+  moveRigth()
+}
+
+
 
 let spaceShip = document.getElementById("spaceShip");
 
@@ -59,3 +104,4 @@ let dir = 1
 // };
 
 // document.addEventListener("keydown", shoot)  
+
