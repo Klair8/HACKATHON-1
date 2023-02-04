@@ -22,27 +22,57 @@
     align-items: center;
 }
 
-#container {
-    width: 400px;
+/*the game place */
+
+.container {
+    width: 600px;
     height: 400px;
     position: relative;
-    background: rgb(32, 32, 31);
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
   }
 
-.monster {
-    width: 50px;
-    height: 50px;
+.container div{
+    width: 30px;
+    height: 30px;  
+    border: 1px solid red;
+  }
+
+.monster {  
+  background-color: green;
+  }
+
+.spaceShip{
+  background-color: pink;
+  }
+
+
+/*
+
+  #monstersContainer {  
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);    
     position: absolute;
+    left: 150px;
+  }
+  .monster {
+    width: 40px;
+    height: 40px;    
     background-color: rgb(25, 127, 46);
+    margin: 5px;
   }
 
+
+  
 /* need to be position absolute as he is below  */
-#spaceShip{
+/*#spaceShip{
     position: absolute;
-    left:150px;
+    left:250px;
     bottom:20px;
     width: 50px;
-    height: 50px;
+    height: 80px;
   }
 
 
@@ -51,4 +81,5 @@
   height: 10px;
   background-color: red;     
   position: absolute;
-}
+}*/
+*/
