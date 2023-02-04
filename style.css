@@ -1,7 +1,8 @@
 
-* {
+body{
   padding: 0;
   margin: 0;
+  background-color: black;
 }
 
 .logo {
@@ -17,26 +18,36 @@
 
 #navigation-container {
     border: 2px solid black;
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 /*the game place */
+.game{
+  background-color: black;
+  position: relative;
+}
+
 
 .container {
     width: 600px;
     height: 400px;
-    position: relative;
     border: 2px solid black;
     display: flex;
     flex-wrap: wrap;
+    position: absolute;
+    left: 300px;
+    justify-content: space-around;
+    background-image: url(voie-lactee-1200.jpeg);
   }
 
 .container div{
     width: 30px;
     height: 30px;  
-    border: 1px solid red;
+    border: 1px solid transparent;
+    margin: 2px;
   }
 
 .monster {  
@@ -44,11 +55,13 @@
   }
 
 .spaceShip{
-  background-color: pink;
+  background-image:url(Space-Invaders-PNG-Background.png);
   }
 
   .laser {
-  background-color: red;     
+  background-color: rgb(220, 219, 219);  
+  width: 5px;
+  height: 10px;
   } 
 
   .blast{
