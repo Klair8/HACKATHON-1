@@ -44,110 +44,30 @@ function moveSpaceShip(e) {;
     }
     squares[currentspaceShipIndex].classList.add('spaceShip')
   }
+
+
     document.addEventListener('keydown', moveSpaceShip);
 
-// game over
-// If (squares[currentspaceShipIndex].classList.contains('monster', 'spaceShip')){
-// resultdisplay.innerHTML = 'GAME OVER'
-// clearInterval(invaderId)
-// }
+// move monster
+const btn = document.getElementsByTagName("button")[0];
+btn.addEventListener("click", myMove);
 
-// for ( let i= 0; i < alienInvader.length; i++){
-// if (alienInvader[i]> (squares.length)){
-// resultdisplay.innerHTML = 'GAME OVER'
-// clearInterval(invaderId)
-// }
-// }
+squares[currentLastMonster].classList.add('last monster');
 
-// invaderId = setInterval(myMove,100)
-
-// SHOOTING TIME
-
-function shootingTime(e) {
-let laserId
-let currentLaserIndex = currentspaceShipIndex
-function moveLaser(){
-  squares[currentLaserIndex].classList.remove('laser');
-  currentLaserIndex -= width
-  squares[currentLaserIndex].classList.add('laser');
-
-if(squares[currentLaserIndex].classList.contains('monster')){
-squares[currentLaserIndex].classList.remove('laser')
-squares[currentLaserIndex].classList.remove('monster')
-squares[currentLaserIndex].classList.add('blast')
-
-setTimeout(()=>squares[currentLaserIndex].classList.remove('blast'),300)
-clearInterval(laserId)
-
-const alienRemoved = alienInvader.indexOf(currentLaserIndex)
-aliensRemoved.push(alienRemoved)
+function myMove(){
+  squares[currentspaceShipIndex].classList.remove('last monster');
+  if(currentLastMonster % width !== 0 )currentLastMonster +=1
+  break
+  squares[currentLastMonster].classList.add('last monster')
 }
-}
-switch(e.key){
-  case'ArrowUp':
-  laserId = setInterval(moveLaser,100)
-}
-}
-document.addEventListener("keydown", shootingTime)
+ setInterval( myMove, 100);
 
 
-// // move monster
-// const btn = document.getElementsByTagName("button")[0];
-// btn.addEventListener("click", myMove);
+function myMove() {
+    setInterval
+    (alienInvader[0] % width < width -1 ) { alienInvader[0] +=1}
+    }, 100)
 
-// squares[currentLastMonster].classList.add('last monster');
-
-// function myMove(){
-//   squares[currentspaceShipIndex].classList.remove('last monster');
-//   if(currentLastMonster % width !== 0 )currentLastMonster +=1
-//   break
-//   squares[currentLastMonster].classList.add('last monster')
-// }
-//  setInterval( myMove, 100);
-
-
-// function myMove() {
-//     setInterval
-//     (alienInvader[0] % width < width -1 ) { alienInvader[0] +=1}
-//     }, 100)
-
-//   }
-//   myMove();
-  
-
-
-//     function moveDown() {
-//       posy += 10
-//       sectionMons.style.top = posy + 'px'
-//     }
-// //   }
-
-//     function moveLeft() {
-//       setInterval(function () {
-//         if (posy >= 350) {
-//           clearInterval(moveLeft)
-//         } else if (posx <= 1000 && posx > 50) {
-//           posx = posx - danger;
-//           sectionMons.style.left = posx + 'px';
-//         } else {
-//           moveDown()
-//           moveRigth()
-//         }
-//       }, 10)
-//     }
-//     if (posy >= 800) {
-//       // alert('lose')
-//     }
-//   }
-//   moveRigth()
-
-
-
-
-
-
-
-
-
-
+  }
+  myMove();
 
