@@ -81,7 +81,6 @@ results ++
 danger-=5
 resultsDisplay.innerHTML = results
 console.log(aliensRemoved)
-console.log(danger);
 }
 
 }
@@ -95,7 +94,6 @@ document.addEventListener("keydown", shootingTime)
 // MOVE MONSTER
 
 function myMove(){
-  console.log(danger);
   const leftEdge = alienInvaders[0] % width === 0
   const rightEdge = alienInvaders[alienInvaders.lenght - 1] % width === 0
   removeMonsters()
