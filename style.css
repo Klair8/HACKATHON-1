@@ -9,11 +9,13 @@ body{
   float: left;
 }
 
-#button {
-  width: 150px;
+h1 {
+  width: 100px;
   height: 50px;
   padding: 15px;
   border: 5px double grey;
+  color: rgb(0, 0, 0);
+  text-align: center;
 }
 
 #navigation-container {
@@ -23,7 +25,6 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-
 
 .container {
     width: 600px;
@@ -57,7 +58,4 @@ body{
   } 
 
 
- h1 {
-  color: rgb(253, 253, 253);
-  font-size :medium
-  }
+ 
