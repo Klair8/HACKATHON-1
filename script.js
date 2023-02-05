@@ -1,13 +1,13 @@
 
 const container = document.querySelector('.container')
-const resultsDisplay = document.querySelector('.results')
+const resultsDisplay = document.querySelector('.result')
 let currentSpaceshipIndex = 188
 let width = 18
 let direction = 1
-let invaderId
+let invadersId
 let goingRight = true
 let aliensRemoved = []
-let results 
+let results = 0
 
 
 for (let i = 0; i < 198; i++) {
@@ -75,7 +75,6 @@ squares[currentLaserIndex].classList.add('blast')
 setTimeout(()=>squares[currentLaserIndex].classList.remove('blast'),300)
 clearInterval(laserId)
 
-
 const alienRemoved = alienInvaders.indexOf(currentLaserIndex)
 aliensRemoved.push(alienRemoved)
 results ++
@@ -118,20 +117,20 @@ for (let i = 0; i < alienInvaders.length; i++) {
 }
 drawMonsters()
 
-if (squares[currentSpaceshipIndex].classList.contains('spaceShip', 'monster')) {
+if (squares[currentSpaceshipIndex].classList.contains('monster','spaceship')) {
   resultsDisplay.innerHTML = 'GAME OVER'
-  clearInterval(invaderId)
+  clearInterval(invadersId)
 }
 
 for (let i = 0; i < alienInvaders.length; i++) {
   if(alienInvaders[i] > (squares.length)) {
     resultsDisplay.innerHTML = 'GAME OVER'
-    clearInterval(invaderId)
+    clearInterval(invadersId)
   }
 }
 if (aliensRemoved.length === alienInvaders.length) {
   resultsDisplay.innerHTML = 'YOU WIN'
-  clearInterval(invaderId)
+  clearInterval(invadersId)
 }
 }
-invaderId = setInterval(myMove, 600)
+invadersId = setInterval(myMove, 50)
