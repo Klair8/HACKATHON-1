@@ -138,6 +138,7 @@ for (let i = 0; i < alienInvaders.length; i++) {
 if (aliensRemoved.length === alienInvaders.length) {
   resultsDisplay.innerHTML = 'YOU WIN'
   clearInterval(invadersId)
+  window.location.assign("youWin.html")
 }
 }
 setInterval(function() {
