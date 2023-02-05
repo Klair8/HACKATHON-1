@@ -133,4 +133,4 @@ if (aliensRemoved.length === alienInvaders.length) {
   clearInterval(invadersId)
 }
 }
-invadersId = setInterval(myMove, 50)
+invadersId = setInterval(myMove, 600)
