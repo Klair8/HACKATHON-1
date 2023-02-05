@@ -47,11 +47,11 @@ h1 {
 
 .container div{
     width: 30px;
-    height: 30px;  
+    height: 30px;
     border: 1px solid transparent;
   }
 
-.monster {  
+.monster {
   font-size: 30px;
   }
 
@@ -74,14 +74,14 @@ h1 {
 
   .laser {
 font-size:20px;
-  } 
+  }
 
   .laser:before {
     content: '\f0d8';
     font: var(--fa-font-solid);
     color: rgb(231, 182, 103);
   }
-  
+
 
 
  .blast:before {

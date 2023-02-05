@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+@keyframes jump {
+	0% {transform: translateY(0)}
+	100% {transform: translateY(-35px)}
+}
+
+body {
+	font-family: "Press Start 2P";
+	background-image: url(https://media.tenor.com/Uj4RSxn_BTMAAAAC/game-over-glitch.gif);
+	padding-top: 35vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #1C1E20;
+  background-position: center;
+  color: blue;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+h1 {
+  color: blue;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+a {
+  text-decoration: none;
+}
+.jumpy {
+	font-size: 7vw;
+	text-align: center;
+	letter-spacing: -.45em;
+	color: blue;
+
+}
+.letter {
+  display: inline-block;
+  animation: jump 500ms infinite ease-out alternate;
+  color: blue;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+
+}
