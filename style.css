@@ -24,12 +24,6 @@ body{
     align-items: center;
 }
 
-/*the game place */
-.game{
-  background-color: black;
-  position: relative;
-}
-
 
 .container {
     width: 600px;
@@ -45,8 +39,7 @@ body{
 .container div{
     width: 30px;
     height: 30px;  
-    border: 0.5px solid red
-  
+    border: 1px solid black;
   }
 
 .monster {  
@@ -64,7 +57,7 @@ body{
   } 
 
 
-  .results{
-  color: aliceblue;
+ h1 {
+  color: rgb(253, 253, 253);
   font-size :medium
   }

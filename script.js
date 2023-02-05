@@ -7,7 +7,7 @@ let direction = 1
 let invaderId
 let goingRight = true
 let aliensRemoved = []
-let results = 0
+let results 
 
 
 for (let i = 0; i < 198; i++) {
@@ -75,9 +75,10 @@ squares[currentLaserIndex].classList.add('blast')
 setTimeout(()=>squares[currentLaserIndex].classList.remove('blast'),300)
 clearInterval(laserId)
 
+
 const alienRemoved = alienInvaders.indexOf(currentLaserIndex)
 aliensRemoved.push(alienRemoved)
-results++
+results ++
 resultsDisplay.innerHTML = results
 console.log(aliensRemoved)
 }
