@@ -34,20 +34,19 @@ body{
 .container {
     width: 600px;
     height: 400px;
-    border: 2px solid black;
+    border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
     left: 300px;
-    justify-content: space-around;
     background-image: url(voie-lactee-1200.jpeg);
   }
 
 .container div{
     width: 30px;
     height: 30px;  
-    border: 1px solid transparent;
-    margin: 2px;
+    border: 0.5px solid red
+  
   }
 
 .monster {  
@@ -55,7 +54,7 @@ body{
   }
 
 .spaceShip{
-  background-image:url(Space-Invaders-PNG-Background.png);
+ background-color: blueviolet;
   }
 
   .laser {
@@ -64,6 +63,8 @@ body{
   height: 10px;
   } 
 
-  .blast{
-    background-color: purple
+
+  .results{
+  color: aliceblue;
+  font-size :medium
   }
