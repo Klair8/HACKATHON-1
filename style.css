@@ -42,13 +42,13 @@ h1 {
     position: absolute;
     left: 400px;
     top: 250px;
-    background-image: url(voie-lactee-1200.jpeg);
+    background-image: url(eso-voie-lacte-01-1262x920.jpeg);
   }
 
 .container div{
     width: 30px;
     height: 30px;  
-    border: 1px solid black;
+    border: 1px solid transparent;
   }
 
 .monster {  
@@ -64,12 +64,12 @@ h1 {
 .spaceShip:before {
   content: '\f197';
   font: var(--fa-font-solid);
-	color: rgb(116, 116, 232);
+	color: rgb(237, 43, 72);
 }
 
 .spaceShip{
   transform: rotate(270deg);
-  font-size: 30px;
+  font-size: 35px;
 }
 
   .laser {
@@ -85,7 +85,7 @@ font-size:20px;
 
 
  .blast:before {
-  content: '\e4e9';
+  content: '\e4dc';
   font: var(--fa-font-solid);
 	color: rgb(226, 76, 43);
 }
