@@ -8,7 +8,7 @@ let invadersId
 let goingRight = true
 let aliensRemoved = []
 let results = 0
-
+let danger = 600
 
 for (let i = 0; i < 198; i++) {
   const square = document.createElement('div');
@@ -78,8 +78,10 @@ clearInterval(laserId)
 const alienRemoved = alienInvaders.indexOf(currentLaserIndex)
 aliensRemoved.push(alienRemoved)
 results ++
+danger-=5
 resultsDisplay.innerHTML = results
 console.log(aliensRemoved)
+console.log(danger);
 }
 
 }
@@ -93,6 +95,7 @@ document.addEventListener("keydown", shootingTime)
 // MOVE MONSTER
 
 function myMove(){
+  console.log(danger);
   const leftEdge = alienInvaders[0] % width === 0
   const rightEdge = alienInvaders[alienInvaders.lenght - 1] % width === 0
   removeMonsters()
@@ -102,6 +105,8 @@ if (rightEdge && goingRight) {
     alienInvaders[i] += width +1
     direction = -1
     goingRight = false
+    danger--
+    console.log(danger);
   }
 }
 
@@ -110,6 +115,8 @@ if  (leftEdge && !goingRight) {
     alienInvaders[i] += width -1
     direction = 1
     goingRight = true
+    danger-=5
+    console.log(danger);
   }
 }
 for (let i = 0; i < alienInvaders.length; i++) {
@@ -128,7 +135,6 @@ for (let i = 0; i < alienInvaders.length; i++) {
     window.location.assign("gameOver.html")
     resultsDisplay.innerHTML = 'GAME OVER'
     clearInterval(invadersId)
-
   }
 }
 if (aliensRemoved.length === alienInvaders.length) {
@@ -136,4 +142,6 @@ if (aliensRemoved.length === alienInvaders.length) {
   clearInterval(invadersId)
 }
 }
-invadersId = setInterval(myMove, 600)
+setInterval(function() {
+  invadersId = setInterval(myMove, 2500)
+}, danger);
