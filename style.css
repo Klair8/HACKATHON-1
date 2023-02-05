@@ -3,15 +3,21 @@ body{
   padding: 0;
   margin: 0;
   background-color: black;
+  font-family: VT323;
 }
 
 .logo {
   float: left;
 }
 
+
+h2{
+font-size: 45px;
+}
+
 h1 {
   width: 100px;
-  height: 50px;
+  height: auto;
   padding: 15px;
   border: 5px double grey;
   color: rgb(0, 0, 0);
@@ -24,6 +30,7 @@ h1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 .container {
@@ -33,7 +40,8 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    left: 300px;
+    left: 400px;
+    top: 250px;
     background-image: url(voie-lactee-1200.jpeg);
   }
 
