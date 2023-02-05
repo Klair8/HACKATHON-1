@@ -86,7 +86,7 @@ console.log(aliensRemoved)
 }
 switch(e.key){
   case'ArrowUp':
-  laserId = setInterval(moveLaser,100)
+  laserId = setInterval(moveLaser,200)
   }
 }
 document.addEventListener("keydown", shootingTime)
