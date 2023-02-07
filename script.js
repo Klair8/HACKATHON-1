@@ -124,12 +124,12 @@ drawMonsters()
 
 if (squares[currentSpaceshipIndex].classList.contains('monster','spaceship')) {
   resultsDisplay.innerHTML = 'GAME OVER'
-  clearInterval(invadersId)
   window.location.assign("gameOver.html")
+  clearInterval(invadersId)
 }
 
 for (let i = 0; i < alienInvaders.length; i++) {
-  if(alienInvaders[i] > (squares.length)) {
+  if(alienInvaders[i] >= (squares.length)) {
     window.location.assign("gameOver.html")
     resultsDisplay.innerHTML = 'GAME OVER'
     clearInterval(invadersId)
