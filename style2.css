@@ -1,0 +1,34 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+@keyframes jump {
+	0% {transform: translateY(0)}
+	100% {transform: translateY(-35px)}
+}
+
+body {
+	font-family: "Press Start 2P";
+	background-image: url(https://i.pinimg.com/originals/37/f9/45/37f9451c5051dc40e85ec4132ab1f2be.gif);
+	padding-top: 35vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  color: blue;
+}
+a {
+  text-decoration: none;
+}
+.jumpy {
+	font-size: 7vw;
+	text-align: center;
+	letter-spacing: -.45em;
+	color: blue;
+
+}
+.letter {
+  display: inline-block;
+  animation: jump 500ms infinite ease-out alternate;
+  color: blue;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+
+}

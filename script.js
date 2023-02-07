@@ -1,12 +1,14 @@
 
 const container = document.querySelector('.container')
-let currentspaceShipIndex = 188
+const resultsDisplay = document.querySelector('.result')
+let currentSpaceshipIndex = 188
 let width = 18
 let direction = 1
-let invaderId
-let aliensRemoved 
-// const resultdisplay =querySelector(."result")
-
+let invadersId
+let goingRight = true
+let aliensRemoved = []
+let results = 0
+let danger = 600
 
 for (let i = 0; i < 198; i++) {
   const square = document.createElement('div');
@@ -16,59 +18,53 @@ for (let i = 0; i < 198; i++) {
 
 const squares = Array.from(document.querySelectorAll('.container div'))
 
-const alienInvader = [
-  0,1,2,3,4,5,6,7,8,9,
-  18,19,20,21,22,23,24,25,26,27,
-  36,37,38,39,40,41,42,43,44,45
+const alienInvaders = [
+  0,1,2,3,4,5,6,7,8,
+  18,19,20,21,22,23,24,25,26,
+  36,37,38,39,40,41,42,43,44,
 ]
 
-function newMonsters() {
-  for (let i = 0; i < alienInvader.length; i++) {
-    squares[alienInvader[i]].classList.add('monster')
+function drawMonsters() {
+  for (let i = 0; i < alienInvaders.length; i++) {
+    if(!aliensRemoved.includes(i)) {
+    squares[alienInvaders[i]].classList.add('monster')
   }
 }
-newMonsters()
+}
+drawMonsters()
 
-squares[currentspaceShipIndex].classList.add('spaceShip');
+function removeMonsters() {
+  for (let i = 0; i < alienInvaders.length; i++) {
+    squares[alienInvaders[i]].classList.remove('monster')
+  }
+}
 
-// move spaceship
+squares[currentSpaceshipIndex].classList.add('spaceShip');
+
+//MOVE SPACESHIP
+
 function moveSpaceShip(e) {;
-  squares[currentspaceShipIndex].classList.remove('spaceShip');
+  squares[currentSpaceshipIndex].classList.remove('spaceShip');
   switch(e.key) {
     case 'ArrowLeft':
-      if (currentspaceShipIndex % width !== 0) currentspaceShipIndex -=1
+      if (currentSpaceshipIndex % width !== 0) currentSpaceshipIndex -=1
     break
     case 'ArrowRight':
-    if (currentspaceShipIndex % width < width -1 ) currentspaceShipIndex +=1
+    if (currentSpaceshipIndex % width < width -1 ) currentSpaceshipIndex +=1
     break
-    }
-    squares[currentspaceShipIndex].classList.add('spaceShip')
   }
-    document.addEventListener('keydown', moveSpaceShip);
-
-// game over
-// If (squares[currentspaceShipIndex].classList.contains('monster', 'spaceShip')){
-// resultdisplay.innerHTML = 'GAME OVER'
-// clearInterval(invaderId)
-// }
-
-// for ( let i= 0; i < alienInvader.length; i++){
-// if (alienInvader[i]> (squares.length)){
-// resultdisplay.innerHTML = 'GAME OVER'
-// clearInterval(invaderId)
-// }
-// }
-
-// invaderId = setInterval(myMove,100)
+  squares[currentSpaceshipIndex].classList.add('spaceShip')
+}
+  document.addEventListener('keydown', moveSpaceShip);
 
 // SHOOTING TIME
 
 function shootingTime(e) {
 let laserId
-let currentLaserIndex = currentspaceShipIndex
+let currentLaserIndex = currentSpaceshipIndex
 function moveLaser(){
-  squares[currentLaserIndex].classList.remove('laser');
-  currentLaserIndex -= width
+   squares[currentLaserIndex].classList.remove('laser');
+   currentLaserIndex -= width
   squares[currentLaserIndex].classList.add('laser');
 
 if(squares[currentLaserIndex].classList.contains('monster')){
@@ -79,75 +75,72 @@ squares[currentLaserIndex].classList.add('blast')
 setTimeout(()=>squares[currentLaserIndex].classList.remove('blast'),300)
 clearInterval(laserId)
 
-const alienRemoved = alienInvader.indexOf(currentLaserIndex)
+const alienRemoved = alienInvaders.indexOf(currentLaserIndex)
 aliensRemoved.push(alienRemoved)
+results ++
+danger-=5
+resultsDisplay.innerHTML = results
+console.log(aliensRemoved)
 }
+
 }
 switch(e.key){
   case'ArrowUp':
-  laserId = setInterval(moveLaser,100)
-}
+  laserId = setInterval(moveLaser,200)
+  }
 }
 document.addEventListener("keydown", shootingTime)
 
+// MOVE MONSTER
 
-// // move monster
-// const btn = document.getElementsByTagName("button")[0];
-// btn.addEventListener("click", myMove);
+function myMove(){
+  const leftEdge = alienInvaders[0] % width === 0
+  const rightEdge = alienInvaders[alienInvaders.lenght - 1] % width === 0
+  removeMonsters()
 
-// squares[currentLastMonster].classList.add('last monster');
+if (rightEdge && goingRight) {
+  for (let i = 0; i < alienInvaders.length; i++) {
+    alienInvaders[i] += width +1
+    direction = -1
+    goingRight = false
+    danger--
+    console.log(danger);
+  }
+}
 
-// function myMove(){
-//   squares[currentspaceShipIndex].classList.remove('last monster');
-//   if(currentLastMonster % width !== 0 )currentLastMonster +=1
-//   break
-//   squares[currentLastMonster].classList.add('last monster')
-// }
-//  setInterval( myMove, 100);
+if  (leftEdge && !goingRight) {
+  for (let i = 0; i < alienInvaders.length; i++) {
+    alienInvaders[i] += width -1
+    direction = 1
+    goingRight = true
+    danger-=5
+    console.log(danger);
+  }
+}
+for (let i = 0; i < alienInvaders.length; i++) {
+  alienInvaders[i] += direction
+}
+drawMonsters()
 
+if (squares[currentSpaceshipIndex].classList.contains('monster','spaceship')) {
+  resultsDisplay.innerHTML = 'GAME OVER'
+  clearInterval(invadersId)
+  window.location.assign("gameOver.html")
+}
 
-// function myMove() {
-//     setInterval
-//     (alienInvader[0] % width < width -1 ) { alienInvader[0] +=1}
-//     }, 100)
-
-//   }
-//   myMove();
-  
-
-
-//     function moveDown() {
-//       posy += 10
-//       sectionMons.style.top = posy + 'px'
-//     }
-// //   }
-
-//     function moveLeft() {
-//       setInterval(function () {
-//         if (posy >= 350) {
-//           clearInterval(moveLeft)
-//         } else if (posx <= 1000 && posx > 50) {
-//           posx = posx - danger;
-//           sectionMons.style.left = posx + 'px';
-//         } else {
-//           moveDown()
-//           moveRigth()
-//         }
-//       }, 10)
-//     }
-//     if (posy >= 800) {
-//       // alert('lose')
-//     }
-//   }
-//   moveRigth()
-
-
-
-
-
-
-
-
-
-
-
+for (let i = 0; i < alienInvaders.length; i++) {
+  if(alienInvaders[i] > (squares.length)) {
+    window.location.assign("gameOver.html")
+    resultsDisplay.innerHTML = 'GAME OVER'
+    clearInterval(invadersId)
+  }
+}
+if (aliensRemoved.length === alienInvaders.length) {
+  resultsDisplay.innerHTML = 'YOU WIN'
+  clearInterval(invadersId)
+  window.location.assign("youWin.html")
+}
+}
+setInterval(function() {
+  invadersId = setInterval(myMove, 2500)
+}, danger);
